@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# IDE/Editor
+.idea/
+.vscode/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data & Outputs
+data/
+checkpoints/
+warehouse/
+logs/
+
+# Spark/Delta runtime
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Docker
+.DS_Store
+docker/*.env
+
+# Airflow
+airflow/
+
+
