@@ -1,0 +1,35 @@
+services:
+  spark-master:
+    image: apache/spark:3.5.1
+    container_name: spark-master
+    restart: unless-stopped
+    environment:
+      - PYTHONPATH=/workspace
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master", "--host", "spark-master", "--port", "7077", "--webui-port", "8080"]
+    ports:
+      - "7077:7077"   # Spark master RPC
+      - "8080:8080"   # Spark master UI
+      - "4040:4040"   # Driver Spark UI (when driver runs in spark-master)
+    volumes:
+      - ../:/workspace
+
+  spark-worker:
+    image: apache/spark:3.5.1
+    container_name: spark-worker
+    restart: unless-stopped
+    depends_on:
+      - spark-master
+    environment:
+      - PYTHONPATH=/workspace
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077", "--webui-port", "8081"]
+    ports:
+      - "8082:8081"   # Spark worker UI
+    volumes:
+      - ../:/workspace
+
+networks:
+  default:
+    name: spark-net
+    driver: bridge
+
+

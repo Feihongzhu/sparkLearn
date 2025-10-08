@@ -1,6 +1,6 @@
 ## SparkLearn 学习与项目指南（本地 Docker 优先）
 
-本仓库用于系统化学习 Spark，并产出一个可演示、可复现、可面试讲解的数据项目（批/流一体 + 湖仓/Delta）。你可以把本仓库直接推送到 GitHub 持续追踪进度与成果。
+本仓库用于系统化学习 Spark，并产出一个可演示、可复现的数据项目（批/流一体 + 湖仓/Delta）。可以把本仓库直接推送到 GitHub 持续追踪进度与成果。
 
 ### 目标与成果
 - **面试可用**：掌握 Spark SQL/Structured Streaming/性能调优/Delta Lake 核心能力。
