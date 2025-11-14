@@ -18,6 +18,10 @@ checkpoints/
 warehouse/
 logs/
 
+# Iceberg
+jars/
+iceberg-warehouse/
+
 # Spark/Delta runtime
 spark-warehouse/
 metastore_db/
